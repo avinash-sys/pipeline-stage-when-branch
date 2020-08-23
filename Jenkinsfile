@@ -1,20 +1,27 @@
 pipeline {
     agent any
     stages {
-        stage('Build Master') {
+        stage('Build code') {
+            steps {
+                echo 'build the source code'
+            }
+        }
+        stage('validation') {
+            steps {
+                echo 'validating'
+            }
+        }
+        stage('integration test') {
+            steps {
+                echo 'performing validation testing'
+            }
+        }
+        stage('Scanning') {
             when {
                 branch 'master'
             }
             steps {
-                echo 'Building master'
-            }
-        }
-        stage('Build Dev') {
-            when {
-                branch 'dev'
-            }
-            steps {
-                echo 'Building dev'
+                echo 'perform scanning'
             }
         }
     }
