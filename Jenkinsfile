@@ -21,7 +21,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                echo 'perform scanning'
+                echo 'perform scanning for master only'
             }
         }
     }
